@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>International Employees</title>
+    <style>
+        table, th, td{
+            border-collapse:collapse;
+            border: 1px solid black;
+        }
+        th, td{
+            padding:8px;
+            text-align: left;
+        }
+        th {
+            color: white;
+            background-color: limegreen;            
+        }
+        td {
+            border-top-style:hidden;
+        }
+        tr:nth-child(2n+1){
+            background-color:aliceblue;
+        }
+        table{
+            width:50%;
+            height: 300px;
+            border-left-style: hidden;
+            border-right-style: hidden;
+        }
+        th.name, th.country{
+            width: 30%;
+        }
+        th.promoted{
+            width:15%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th class="name">Contact name</th>
+            <th class="city">City</th>
+            <th class="country">Country</th>
+            <th class="promoted">Is Promoted</th>
+        </tr>
+        <tr>
+            <td>Maria Anders</td>
+            <td>Berlin</td>
+            <td>
+                <img src="https://duhocvietduc.edu.vn/wp-content/uploads/2017/07/quoc-ky-duc.png" width="23px" height="12px" /> Germany
+            </td>
+            <td><input type="checkbox" name="check1" /></td>
+        </tr>
+        <tr>
+            <td>Ana Trujilo</td>
+            <td>México D.F.</td>
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/263px-Flag_of_Mexico.svg.png" width="23px" height="12px" /> Mexico
+            </td>
+            <td><input type="checkbox" name="check1" /></td>
+        </tr>
+        <tr>
+            <td>Antonio Moreno</td>
+            <td>México D.F.</td>
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/263px-Flag_of_Mexico.svg.png" width="23px" height="12px" /> Mexico
+            </td>
+            <td><input type="checkbox" name="check1" /></td>
+        </tr>
+        <tr>
+            <td>Thomas Hardy</td>
+            <td>London</td>
+            <td>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/300px-Flag_of_the_United_Kingdom.svg.png" width="23px" height="12px" /> UK
+            </td>
+            <td><input type="checkbox" name="check1" /></td>
+        </tr>
+    </table>
+</body>
+</html>
