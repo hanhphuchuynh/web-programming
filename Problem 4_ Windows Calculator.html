@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title>Programmer calculator</title>
+    <link rel="stylesheet" type="text/css" href="design.css" />
+    <style>
+        td, input[type=text] {
+            border: none;
+            background-color: transparent;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .button {
+            width: 75px;
+            height: 50px;
+            font-size: 25px;
+            margin: 2px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .textview {
+            width: 305px;
+            margin: 5px;
+            font-size: 25px;
+            padding: 5px;
+            border: none;
+            background-color: transparent;
+        }
+
+        .main {
+            width: 490px;
+            height: 490px;
+            background-color: #efecec;
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            transform: translateX(-50%)translateY(-50%);
+            border: 1px solid gray;
+        }
+
+        .number {
+            background-color: white;
+            font-weight: bold;
+        }
+
+        .symbol {
+            background-color: #fbfbfb;
+        }
+
+        .gray:hover {
+            background-color: antiquewhite;
+            ;
+        }
+
+        .blue:hover {
+            background-color: #03a9f4;
+        }
+
+        .dataType {
+            text-align: right;
+        }
+    </style>
+    <script type="text/javascript">
+        function displynum(n1) {
+            myForm.textview.value = myForm.textview.value + n1;
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <form name="myForm">
+            <input type="text" placeholder="0" name="textview" class="textview" />
+        </form>
+        <table>
+            <tr>
+                <td><input type="radio" name="type" value="Hex"/>HEX</td>
+                <td colspan="5"><input type="text" name="textHex" disabled/></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="type" value="Dec" />DEC</td>
+                <td colspan="5"><input type="text" name="textDec" disabled/></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="type" value="Oct" />OCT</td>
+                <td colspan="5"><input type="text" name="textOct" disabled/></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="type" value="Bin" />BIN</td>
+                <td colspan="5"><input type="text" name="textBin" disabled/></td>
+            </tr>
+            <tr class="dataType">
+                <td><input type="radio" name="dataType" value="Byte" />Byte</td>
+                <td><input type="radio" name="dataType" value="Word" />Word</td>
+                <td><input type="radio" name="dataType" value="DWord" />DWord</td>
+                <td><input type="radio" name="dataType" value="QWord" />QWord</td>
+            </tr>
+            <tr>
+                <td><input type="button" class="button gray" value="Lsh" /></td>
+                <td><input type="button" class="button gray" value="Rsh" /></td>
+                <td><input type="button" class="button gray" value="Or" /></td>
+                <td><input type="button" class="button gray" value="Xor" /></td>
+                <td><input type="button" class="button gray" value="Not" /></td>
+                <td><input type="button" class="button gray" value="And" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="button gray" value="&uarr;" /></td>
+                <td><input type="button" class="button gray" value="Mod" /></td>
+                <td><input type="button" class="button gray" value="CE" /></td>
+                <td><input type="button" class="button gray" value="C" /></td>
+                <td><input type="button" class="button gray" value="&larr;" /></td>
+                <td><input type="button" class="button gray" value="/" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" name="btnA" class="button blue" value="A" onclick="displynum(btnA.value)"/></td>
+                <td><input type="button" name="btnB" class="button blue" value="B" onclick="displynum(btnB.value)" /></td>
+                <td><input type="button" name="btn7" value="7" class="button blue" onclick="displynum(btn7.value)"></td>
+                <td><input type="button" name="btn8" class="button blue" value="8"  onclick="displynum(btn8.value)"/></td>
+                <td><input type="button" name="btn9" class="button blue" value="9" onclick="displynum(btn9.value)" /></td>
+                <td><input type="button" name="multiBtn" class="button gray" value="*" onclick="displynum(multiBtn.value)"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="button blue" value="C" /></td>
+                <td><input type="button" class="button blue" value="D" /></td>
+                <td><input type="button" class="button blue" value="4" onclick="insertNum(4)" /></td>
+                <td><input type="button" class="button blue" value="5" onclick="insertNum(5)" /></td>
+                <td><input type="button" class="button blue" value="6" onclick="insertNum(6)" /></td>
+                <td><input type="button" class="button gray" value="-" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="button blue" value="E" /></td>
+                <td><input type="button" class="button blue" value="F" /></td>
+                <td><input type="button" class="button blue" value="1"  onclick="insertNum(1)"/></td>
+                <td><input type="button" class="button blue" value="2"  onclick="insertNum(2)"/></td>
+                <td><input type="button" class="button blue" value="3"  onclick="insertNum(3)"/></td>
+                <td><input type="button" class="button gray" value="+" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="button gray" value="(" /></td>
+                <td><input type="button" class="button gray" value=")" /></td>
+                <td><input type="button" class="button gray" value="&plusmn;" /></td>
+                <td><input type="button" class="button blue" value="0" onclick="insertNum(0)" /></td>
+                <td><input type="button" class="button gray" value="." /></td>
+                <td><input type="button" class="button gray" value="=" /></td>
+            </tr>
+        </table>
+    </div>
+    <!--<script type="text/javascript">
+        var exp = '', number, decimal, equal, operator, allowSR = true;
+        var textview = docu.forms['myForm']['textview'];
+
+        function insertNum(num) {
+            if (equal) {
+                exp = num;
+                textview.value = exp;
+                number = true;
+                equal = false;
+            }
+            else {
+                exp = textview.value + num;
+                textview.value = exp;
+                number = true;
+            }
+            if (operator) decimal = false;
+            //sr('a');
+        }
+    </script>-->
+</body>
+</html>
