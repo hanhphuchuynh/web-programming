@@ -1,0 +1,17 @@
+<html>
+<body>
+    <script>
+        function checkNumber() {
+            var n = document.getElementById('num').value;
+            n = parseInt(n);
+            n = Math.floor(n/ 100);
+            var m = n % 10;
+            if (m == 7)
+                alert("true");
+            else alert("false " + m);
+        }
+    </script>
+    <input type="text" id="num" value="" />
+    <input type="button" onclick="checkNumber();" value="Check" />
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Operators and expressions</title>
+    <script type="text/javascript">
+        //1. odd number or even
+
+        function checkNumber() {
+            var s = document.getElementById('num').value;
+            if (s % 2 == 0) {
+                alert("Even number");
+            } else {
+                alert("Odd number");
+            }
+        }
+    </script>
+</head>
+<body>
+        <input type="number" id="num"  value=""/>
+        
+    <input type="button" onclick="checkNumber();" value="Check"/>
+</body>
+</html>

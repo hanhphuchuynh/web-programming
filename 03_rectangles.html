@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Operators and expressions</title>
+    <script type="text/javascript">
+        function rectangle() {
+            var w = document.getElementById('width').value;
+            var h = document.getElementById('height').value;
+            var area = parseFloat(w) * parseFloat(h);
+            var area1 = Math.round(area * 1000) / 1000;
+            var perimeter = (parseFloat(w) + parseFloat(h)) * 2;
+            var perimeter1 = Math.round(perimeter * 1000) / 1000;
+            alert("Area: "+area1 + "   Perimeter: " + perimeter1);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="width" value="" placeholder="width"/>
+    <input type="text" id="height" value="" placeholder="height"/>
+    <input type="button" onclick="rectangle();" value="Calculate" />
+</body>
+</html>

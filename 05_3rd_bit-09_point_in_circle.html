@@ -1,0 +1,78 @@
+<html>
+<body>
+    <script>
+        // 05_3rd digit
+        function digit(number) {
+            number = parseInt(number);
+            var digit;
+            for (var i = 0; i < 3; i++) {
+                digit = number % 2;
+                number = Math.floor(number/2);
+            }
+            console.log(digit);
+        }
+        // 06.Point in a circle
+        function isPointInCircle(array) {
+            var x = array[0];
+            x = parseFloat(x);
+            var y = array[1];
+            y = parseFloat(y);
+            var r = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+            r = Math.round(r * 100) / 100;
+            if (r <= 2) {
+                console.log("Yes  " + r);
+            } else {
+                console.log("No  " + r);
+            }
+        }
+        // 07.Prime check
+        function checkPrime(number) {
+            number = parseInt(number);
+            if (number < 2) {
+                console.log("false");
+            } else {
+                if (number == 2) {
+                    console.log("true");
+                } else {                    
+                    t = Math.floor(Math.sqrt(number));
+                    var flag = false;
+                    for (var i = 2; i < t; i++) {
+                        if (number % i == 0) {
+                            flag = true;
+                            break;
+                        }                            
+                    }
+                    if (flag) {
+                        console.log("false");
+                    }
+                    else {
+                        console.log("true");
+                    }
+                }
+            }
+        }
+        // 08. Trapezoids
+        function trapezoids(array) {
+            a = array[0];
+            a = parseFloat(a);
+            b = array[1];
+            b = parseFloat(b);
+            c = array[2];
+            c = parseFloat(c);
+            
+            var area = ((a + b) / 2) * c;
+            area = Math.round(area * 10000000) / 10000000;
+            console.log(area);
+        }
+        // 09. Point, Circle, Rectangle
+        function isPoint(array) {
+            var x = parseFloat(array[0]);
+            var y = parseFloat(array[1]);
+            var str = (Math.pow(x - 1, 2) + Math.pow(y - 1, 2) <= Math.pow(1.5, 2))?'inside circle ':'outside circle '
+            str += ((x>=-1) && (y>=-1) && (x<=5) && (y<=1)) ? 'inside rectangle' : 'outside rectangle'
+            console.log(str);
+        }
+
+    </script>
+</body>
+</html>
