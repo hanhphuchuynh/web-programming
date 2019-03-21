@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        // 01.Planar coordinates
+        function planarCpordinates(array) {
+            var temp = [];
+            for (var i = 0; i < array.length ; i += 4) {
+                var x1 = + (array[i]);
+                var y1 = +(array[i+1]);
+                var x2 = +(array[i+2]);
+                var y2 = +(array[i + 3]);
+                var a = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+                var a = Math.round(a * 100) / 100;
+                console.log(a);
+                temp.push(a);
+            }
+            var max = temp.pop(Math.max.apply(Math, temp)); 
+            var x = +(temp[0]);
+            var y = +(temp[1]);
+                console.log((Math.sqrt(Math.pow(x, 2) + Math.pow(x, 2)) >= max) ? 'Triangle can be built' : 'Triangle can not be built');
+        }
+        // 02.Remove elements
+        function removeElements(array) {
+            var temp = array.shift();
+            for (var i = 0; i < array.length - 1; i++) {
+                if (array[i] === temp) {
+                    array.splice(i, 1);
+                }
+            }
+            console.log(array);
+        }
+        // Youngest person
+        function youngestPerson(array) {
+            Person = function (firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+            var persons = [];
+            for (var i = 0; i < array.length; i += 3) {
+                var firstName = array[i];
+                var lastName = array[i + 1];
+                var age = +(array[i + 2]);
+                var person = new Person(firstName, lastName, age);
+                persons.push(person);
+            }
+            var min = persons[0].age;
+            var name = persons[0].firstName + ' ' + persons[0].lastName;
+            for (var i = 1; i < persons.length; i++) {
+                if (persons[i].age < min) {
+                    max = persons[i].age;
+                    name = persons[i].firstName + ' ' + persons[i].lastName;
+                }
+            }
+            console.log(name);
+        }
+        // Group people
+        function groupPeople(array) {
+            Person = function (firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+            var persons = [];
+            GroupPerson = function (ageGroup, persons) {
+                this.ageGroup = ageGroup;
+                this.persons = persons;
+            }
+            for (var i = 0; i < array.length; i += 3) {
+                var firstName = array[i];
+                var lastName = array[i + 1];
+                var age = +(array[i + 2]);
+                var person = new Person(firstName, lastName, age);
+                persons.push(person);
+            }
+            var groupPersons = [];
+            for (var i = 1; i < persons.length; i++) {
+                for (var j = 0; i < groupPersons.length; j++) {
+                    if (persons[i].age == groupPersons[j].age) {
+                        groupPersons[j].persons.push(persons[i]);
+                    } else {
+                        groupPersons.push(new GroupPerson(persons[i].age, persons[i]))
+                    }
+                }
+            }
+            console.log(groupPersons);
+        }
+    </script>   
+</body>
+</html>

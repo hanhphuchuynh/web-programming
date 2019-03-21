@@ -1,0 +1,123 @@
+<html>
+<head>
+    <title>Loop</title>
+</head>
+<body>
+    <script>
+        //01. Allocate array
+        function allocateArray(array) {
+            var a = parseInt(array[0]);
+            var arr = new Array(a);
+            for (var i = 0; i < a; i += 1) {
+                arr[i] = parseInt(i);
+                console.log(arr[i] * 5);
+            }
+        }
+        //02. Lexicographically compare
+        function lexicographicallyCompare(array) {
+            var a = array[0];
+            var b = array[1];
+            console.log((a > b) ? '>' : ((a < b) ? '<' : '='));
+        }
+        //03. Maximal sequence
+        function maximalSequence(array) {
+            var a = array.shift();
+            var temp = new Array(1024);
+            array.sort();
+            var b = array.pop();
+            array.push(b);
+            for (var j = 0; j < array.length; j++) {
+                for (var i = 0; i <= b; i++) {
+                    if (array[j] == i) {
+                        temp[i]++;
+                    }
+                }
+            }
+            var count = 0;
+            for (var i = 1; i <= b; i++) {
+                if (temp[i] != 0) {
+                    count++;
+                }
+            }
+            console.log(count);
+        }
+        // 04.Maximal increasing sequence
+        function maximalIncreasingSequence(array) {
+            var a = array.shift();
+            var arr = array;
+            var max = 0;
+            var count = 1;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i + 1] > arr[i]) {
+                    count++;
+                }
+                else { 
+                    if (max < count) {
+                        max = count;
+                    }
+                    count = 1;
+                }
+            }
+            console.log(max);
+        }
+        //05. Selection sort
+        function selectionSort(arr) {
+            var a = arr.shift();
+            for (var i = 0; i < arr.length; i++)
+            {
+                var index = i;
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[j] < arr[index]) {
+                        index = j;
+                    }
+                }
+                var smallerNumber = arr[index];
+                arr[index] = arr[i];
+                arr[i] = smallerNumber;
+                console.log(arr[i]);
+            }
+            
+        }  
+        // 06. Frequent number
+        function frequentNumber(array) {
+            var a = array.shift();
+            var temp = new Array(1024);
+            array.sort();
+            var b = array.pop();
+            array.push(b);
+            for (var j = 0; j < array.length; j++) {
+                for (var i = 0; i <1024; i++) {
+                    if (array[j] == i) {
+                        temp[i]++;
+                    }
+                }
+            }
+            var time = 0, num = 0;
+            for (var i = 1; i <= b; i++) {
+                if (time<temp[i]) {
+                    time = temp[i];
+                    num = i;
+                }
+            }
+            console.log(num+' ('+time+' times)');
+        }
+        // 07. Binary search
+        function binarySearch(arr) {
+            var a = arr.shift();
+            var x = arr.pop();
+            var l = 0, r = arr.length - 1;
+            while (l <= r) {
+                var m = Math.floor(l + (r - l) / 2);
+                if (arr[m] == x)
+                    return m;
+                if (arr[m] < x)
+                    l = m + 1;
+                else
+                    r = m - 1;
+            }
+            return -1; 
+        }
+        
+    </script>
+</body>
+</html>

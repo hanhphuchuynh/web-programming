@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>Topic 5. Conditional statements</title>
+</head>
+<body>
+    <script>
+        // 01. Exchange if greater
+        function exchange(array) {
+            a = parseFloat(array[0]);
+            b = parseFloat(array[1]);
+            if (a > b) {
+                var temp = a;
+                a = b;
+                b = temp;
+            }
+            console.log(a + ' ' + b);
+        }
+        // 02. Multiplication Sign
+        //function multiplicationSign(array) {
+
+        //}
+
+        //03. The biggest of Three
+        function biggestOfThree(array) {
+            var a = parseFloat(array[0]);
+            var b = parseFloat(array[1]);
+            var c = parseFloat(array[2]);
+            var max = a;
+            if (b > max) {
+                max = b;
+            }
+            if (c > max) {
+                max = c;
+            }
+            console.log(max);
+        }
+        //04. Sort 3 numbers
+        function sortThreeNumber(array) {
+            var a = parseFloat(array[0]);
+            var b = parseFloat(array[1]);
+            var c = parseFloat(array[2]);
+            var t;
+            if (a > b) {
+                t = a;
+                a = b;
+                b = t;
+            }
+            if (b > c) {
+                t = b;
+                b = c;
+                c = t;
+            }
+            if (a > c) {
+                t = a;
+                a = c;
+                c = t;
+            }
+            console.log(c+' '+b+' '+a);
+        }
+        //05. Digit as word
+        function digitAsWord(array) {
+            var a = +(array[0]);
+            switch (a) {
+                case 0: {
+                    console.log('zero');
+                    break;
+                }
+                case 1: {
+                    console.log('one');
+                    break;
+                }
+                case 2: {
+                    console.log('two');
+                    break;
+                }
+                case 3: {
+                    console.log('three');
+                    break;
+                }
+                case 4: {
+                    console.log('four');
+                    break;
+                }
+                case 5: {
+                    console.log('five');
+                    break;
+                }
+                case 6: {
+                    console.log('six');
+                    break;
+                }
+                case 7: {
+                    console.log('seven');
+                    break;
+                }
+                case 8: {
+                    console.log('eight');
+                    break;
+                }
+                case 9: {
+                    console.log('nine');
+                    break;
+                }
+                default:{
+                    console.log('not a digit');
+                    break;
+                }
+            }
+        }
+        //06. Quadratic equation
+        function quadraticEquation(array) {
+            var a = +(array[0]);
+            var b = +(array[1]);
+            var c = +(array[2]);
+            var deta = Math.pow(b, 2) - 4 * a * c;
+            var result,result1;
+            if (deta < 0) {
+                console.log('no real roots');
+            }
+            if (deta == 0) {
+                result = - b / (2 * a);
+                result = Math.round(result * 100) / 100;
+                console.log('x1=x2=' + result);
+            }
+            if (deta > 0) {
+                result = (-b + Math.sqrt(deta)) / (2 * a);
+                result1 = (-b - Math.sqrt(deta)) / (2 * a);
+                result = Math.round(result * 100) / 100;
+                result1 = Math.round(result1 * 100) / 100;
+                if (result < result1) {
+                    console.log('x1=' + result + '; x2=' + result1);
+                }
+                if (result > result1) {
+                    console.log('x1=' + result1 + '; x2=' + result);
+                }
+            }
+        }
+
+        //07. The biggest of five numbers
+        function biggestOfFiveNumber(array) {
+            var a = +(array[0]);
+            var b = +(array[1]);
+            var c = +(array[2]);
+            var d = +(array[3]);
+            var e = +(array[4]);
+            var max = a;
+            if (b > max) {
+                max = b;
+            }
+            if (c > max) {
+                max = c;
+            }
+            if (d > max) {
+                max = d;
+            }
+            if (e > max) {
+                max = e;
+            }
+            console.log(max);
+        }
+
+        //08. Number as words
+        function numberAsWord(array) {
+            var a = array[0];
+            num = [...a];
+            var len = a.length;
+            console.log(b);
+            if (len == 0) {
+                console.log('empty string');
+            }
+            var single_digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+            var two_digits = ["", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen","eighteen", "nineteen"];
+            var tens_multiple = ["", "", "twenty", "thirty", "forty","fifty", "sixty", "seventy","eighty", "ninety"];
+
+        }
+    </script>
+</body>
+</html>
