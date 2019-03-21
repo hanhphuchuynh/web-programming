@@ -1,0 +1,182 @@
+﻿<html>
+<head>
+    <title>Previous final test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        .page-header, .footer {
+            text-align: center;
+        }
+        .editForm{
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+    <!--// Java Script-->
+    <script>
+        Product = function (code, category, name, description, price, link) {
+            this.code = code;
+            this.category = category;
+            this.name = name;
+            this.description = description;
+            this.price = price;
+            this.link = link;
+        }
+        var products = [
+            new Product('001', 'Laptop', 'Asus 515g', 'Super thin', 1500, 'https://getbootstrap.com/docs/4.0/layout/grid/'),
+            new Product('002', 'Laptop', 'Dell 515g', 'Super thin', 1700, 'https://getbootstrap.com/docs/4.0/layout/grid/'),
+            new Product('003', 'Desktop', 'Asus 515g', 'Super thin', 1600, 'https://getbootstrap.com/docs/4.0/layout/grid/'),
+            new Product('004', 'Projector', 'Dell 515g', 'Super thin', 1900, 'https://getbootstrap.com/docs/4.0/layout/grid/'),
+            new Product('005', 'Phone', 'Dell 515g', 'Super thin', 2000, 'https://getbootstrap.com/docs/4.0/layout/grid/'),
+        ];
+        //khoi tao ham cho chay ; Cach 1
+        function initiateItems() {
+            var html = products.map((product, index) => `<tr data-id="${product.code}">
+                                <td>${index + 1}</td>
+                                <td>${product.code}</td>
+                                <td>${product.category}</td>
+                                <td>${product.name}</td>
+                                <td>${product.description}</td>
+                                <td>${product.price}</td>
+                                <td>${product.link}</td>
+                        </tr>`).join('\r\n');
+            $('#products tbody').html(html);
+
+        }
+        function showAllProducts(products) {
+            var html = products.map((product, index) => `<tr data-id="${product.code}">
+                                <td>${index + 1}</td>
+                                <td>${product.code}</td>
+                                <td>${product.category}</td>
+                                <td>${product.name}</td>
+                                <td>${product.description}</td>
+                                <td>${product.price}</td>
+                                <td>${product.link}</td>
+                        </tr>`).join('\r\n');
+            $('#products tbody').html(html);
+
+        }
+        $(initiateItems);
+        var currentCategory = 0;
+        $(function () {
+            $('#category').on('click', 'a', function () {
+                var category = $(this).attr('data-category');
+                currentCategory = category;
+                var selectedProducts = products.filter(product => product.category === category);
+                showAllProducts(selectedProducts);
+            })
+
+            $('#products').on('click', 'tbody tr', function (evt) {
+                //alert($(this).attr('data-id'));
+                var code = $(this).attr('data-id');
+                var product = products.find(product => product.code === code);
+
+                $('#itemdetail input,#itemdetail select,#itemdetail textarea').each(function () {
+                    var name = $(this).attr('name');
+                    $(this).val(product[name]);
+                })
+            })
+            $('#btnSave').on('click',function (evt) {
+                //var code = $(this).attr('data-id');
+                //var product = products.find(product => product.code === code);
+
+                var product = {};
+
+                $('#itemdetail input,#itemdetail select,#itemdetail textarea').each(function () {
+                    var name = $(this).attr('name');
+                    product[name] = $(this).val();
+                })
+
+                var index = products.findIndex(x => x.code === product.code);
+                products[index] = product;
+                var selectedProduct = products.filter(product => product.category === currentCategory || currentCategory=='');
+                showAllProducts(selectedProduct);
+            });
+        });
+        
+                        // Cach 2
+                        //(function () { })();
+    </script>
+</head>
+<body>
+    <!--// Layout-->
+    <div class="container-fluid">
+        <!--// Header-->
+        <div class="page-header">
+            <p>Header</p>
+        </div>
+        <!--//Body-->
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <ul id="category">
+                    <li><a href="#Phone" data-category="Phone">Phone</a></li>
+                    <li><a href="#Desktop" data-category="Desktop">Desktop</a></li>
+                    <li><a href="#Laptop" data-category="Laptop">Laptop</a></li>
+                    <li><a href="#Projector" data-category="Projector">Projector</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <table id="products" border="1">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Code</th>
+                                    <th>Category</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Link</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-9">
+                        <div id="itemdetail" class="editForm">
+                            <div>
+                                <label>Product code: </label><input type="text" name="code" readonly="readonly" />
+                            </div>
+                            <div>
+                                <label>Product name: </label><input type="text" name="name" />
+                            </div>
+                            <div>
+                                <label>Product category: </label>
+                                <select name="category">
+                                    <option value="">Category</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Camera">Camera</option>
+                                    <option value="Projector">Projector</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Price: </label><input type="text" name="price" />
+                            </div>
+                            <div>
+                                <label>Link: </label><input type="text" name="link" />
+                            </div>
+                            <div>
+                                <label>Description: </label><textarea name="description" rows="4" cols="50" /></textarea>
+                            </div>
+                            <div>
+                                <button id="btnSave">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// footer-->
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
+
+</body>
+</html>

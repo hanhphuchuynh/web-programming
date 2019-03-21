@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+    <title>Week 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Bảng thông tin sinh viên EIU</h2>
+        <div class="students_">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>MSSV</th>
+                        <th>Tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Email</th>
+                        <th>Mã lớp</th>
+                        <th>Ngành</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1631210018</td>
+                        <td>Huỳnh Hạnh Phúc</td>
+                        <td>1998-9-9</td>
+                        <td>phuc.huynh.set16@eiu.edu.vn</td>
+                        <td>CNC</td>
+                        <td>Công nghệ thông tin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Nhập thông tin cơ bản của sinh viên</h2>
+        <form class="form-horizontal" action="/action_page.php" id="studentInfo">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">MSSV:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="code" placeholder="Nhập MSSV">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Tên:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" placeholder="Nhập tên">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Ngày sinh:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="birthday" placeholder="dd/mm/yyyy">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="a.nguyen.set11@eiu.edu">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Mã lớp:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="acronym" placeholder="Nhập mã lớp">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Ngành:</label>
+                <div class="col-sm-10">
+                    <select id="major"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" id="test">Test</button>
+                    <button type="button" class="btn btn-default" id="add">Add</button>
+                    <button type="button" class="btn btn-default" id="edit">Edit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Bảng thông tin sinh viên EIU</h2>
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="text" class="form-control" id="txtSearch" placeholder="Nhập thong tin can tim">
+            <button type="button" class="btn btn-default" id="search">Search</button>
+        </div>
+        <div class="students_">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>MSSV</th>
+                        <th>Tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Email</th>
+                        <th>Mã lớp</th>
+                        <th>Ngành</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

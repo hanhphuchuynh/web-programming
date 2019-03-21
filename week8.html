@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+    <title>Week 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        .page-header, .footer{
+            text-align: center;
+        }
+        li.active{
+            background-color: antiquewhite;
+        }
+        td.hightlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!--// Header-->
+        <div class="page-header">
+            <p>Header</p>
+        </div>
+        <!--//Body-->
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <ul><p>Danh sach lop hoc</p></ul>
+                <ul id="className">
+
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <table id="allStudents" border="1" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Code</th>
+                                    <th>Full name</th>
+                                    <th>Birthday</th>
+                                    <th>Address</th>
+                                    <th>Homework</th>
+                                    <th>Midterm</th>
+                                    <th>Final</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <select id="class"></select>
+                        <button id="add">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// footer-->
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
+
+</body>
+</html>
